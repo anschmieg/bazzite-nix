@@ -1,12 +1,13 @@
-# Bazzite Nix
+# Bazzite Nix NVIDIA
 
-Minimal custom Bazzite KDE image that adds an empty `/nix` directory to the
-immutable image. This allows the Determinate Nix installer to bind-mount the
-persistent store at `/var/home/nix` without modifying the immutable root at
-runtime.
+Minimal custom Bazzite KDE image for newer NVIDIA GPUs. It adds an empty
+`/nix` directory to the immutable image, allowing the Determinate Nix
+installer to bind-mount the persistent store at `/var/home/nix` without
+modifying the immutable root at runtime. The NVIDIA base uses NVIDIA's open
+kernel modules alongside its proprietary user-space driver components.
 
-The image deliberately contains no additional packages. Bazzite is tracked by
-the `stable` base-image tag and rebuilt daily by GitHub Actions, so normal
+The image deliberately contains no additional packages. It tracks
+`bazzite-nvidia-open:stable` and is rebuilt daily by GitHub Actions, so normal
 system updates continue to use the standard atomic update and rollback model.
 
 ## Rebase
